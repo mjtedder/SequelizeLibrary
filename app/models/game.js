@@ -4,7 +4,7 @@ let sequelize = require('../config/connection')
 let Game = sequelize.define('game', {
     title: Sequelize.STRING,
     developer: Sequelize.STRING,
-    genre: Sequelize.STRING,
+    console: Sequelize.STRING,
     year: Sequelize.INTEGER
 })
 
