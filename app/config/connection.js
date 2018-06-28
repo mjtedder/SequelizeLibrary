@@ -1,6 +1,9 @@
+require('dotenv').config()
 let Sequelize = require('sequelize')
 
-let sequelize = new Sequelize('sequelize_library', 'root', '', {
+console.log(process.env.DB_DATABASE)
+
+let sequelize = new Sequelize(process.env.DB_DATABASE, process.env.DB_USERNAME, process.env.DB_PASSWORD, {
     host: 'localhost',
     port: 3306,
     dialect: 'mysql',
