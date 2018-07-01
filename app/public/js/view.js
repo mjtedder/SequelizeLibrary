@@ -22,6 +22,36 @@ $.get('/api/developer/' + developerSearched, (data) => {
     // Log the data to the console
     console.log(data)
     // Call our renderBooks function to add our books to the page
-    renderBooks(data)
+    renderGames(data)
     })
 })
+
+// When user hits the console-search-btn
+$('#console-search-btn').on('click', () => {
+  // Save the game they typed into the console-search input
+  let consoleSearched = $('#console-search').val().trim()
+  // Make an AJAX request to our api, including the user's console in the url
+ $.get('/api/genre/' + consoleSearched, (data) => {
+   
+   console.log(data)
+   renderGames(data)
+ })
+})
+
+
+renderGames(data) {
+    if(data.length !== 0) {
+        $('#stats').empty()
+        $('#stats').show()
+    
+    for (let i = 0; i < data.length; i++) {
+
+        let div = $('<div>')
+    
+        div.append('<h2>' + data[i].title + '</h2>')
+        div.append('<p>Developer: ' + data[i].developer + '</p>')
+        div.append('<p>Console: ' + data[i].console + '</p>')
+        div.append('<p>Current')
+    }
+    }
+}
