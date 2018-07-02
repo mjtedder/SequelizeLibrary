@@ -82,7 +82,7 @@ module.exports = (app) => {
     app.post('/api/delete', (req, res) => {
         console.log('Game Data:')
         console.log(req.body)
-        Book.destroy({
+        Game.destroy({
             where: {
                 id: req.body.id
             }
