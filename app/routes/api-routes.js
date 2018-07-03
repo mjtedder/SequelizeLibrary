@@ -21,7 +21,7 @@ module.exports = (app) => {
     app.get('/api/console/:console', (req, res) => {
         Game.findAll({
             where: {
-                genre: req.params.console
+                console: req.params.console
             }
         }).then((results) => {
             res.json(results)

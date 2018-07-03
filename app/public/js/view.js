@@ -31,7 +31,7 @@ $('#console-search-btn').on('click', () => {
     // Save the game they typed into the console-search input
     let consoleSearched = $('#console-search').val().trim()
     // Make an AJAX request to our api, including the user's console in the url
-    $.get('/api/genre/' + consoleSearched, (data) => {
+    $.get('/api/console/' + consoleSearched, (data) => {
 
         console.log(data)
         renderGames(data)
@@ -41,6 +41,7 @@ $('#console-search-btn').on('click', () => {
 
 function renderGames(data) {
     if (data.length !== 0) {
+        
         $('#stats').empty()
         $('#stats').show()
 
@@ -52,17 +53,18 @@ function renderGames(data) {
             div.append('<p>Developer: ' + data[i].developer + '</p>')
             div.append('<p>Console: ' + data[i].console + '</p>')
             div.append('<p>Year: ' + data[i].year + '</p>')
-            div.append("<button class='delete' data id='" + data[i].id + "'>DELETE GAME</button>")
+            div.append("<button class='delete' data-id='" + data[i].id + "'>DELETE GAME</button>")
 
             $('#stats').append(div)
         }
 
         $('.delete').click(() => {
-
+            
             let info = {
                 id: $(this).attr('data-id')
+                
             }
-
+            console.log(this)
             $.post('/api/delete', info)
                 // On success, run the following code
                 .then((delData) => {
