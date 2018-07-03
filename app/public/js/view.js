@@ -41,7 +41,7 @@ $('#console-search-btn').on('click', () => {
 
 function renderGames(data) {
     if (data.length !== 0) {
-        
+
         $('#stats').empty()
         $('#stats').show()
 
@@ -59,12 +59,12 @@ function renderGames(data) {
         }
 
         $('.delete').click(() => {
-            
+
             let info = {
                 id: $(this).attr('data-id')
-                
             }
-            console.log(this)
+            // THE ID from SEQUELIZE IS COMING UP UNDEFINED
+            console.log(info)
             $.post('/api/delete', info)
                 // On success, run the following code
                 .then((delData) => {
