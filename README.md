@@ -2,7 +2,7 @@
 
 Demonstrating the use of a Sequelize ORM to create a video games library application with basic CRUD capability.
 
-| [Node.JS](https://nodejs.org/en/) | [Express.js](https://expressjs.com/) | [Sequelize](http://docs.sequelizejs.com/) |
+| [Node.JS](https://nodejs.org/en/) | [Express.js](https://expressjs.com/) | [Sequelize](http://docs.sequelizejs.com/) | [MySQL](https://dev.mysql.com/doc/) |
 
 ![Travis](https://img.shields.io/travis/USER/REPO.svg)
 ![npm](https://img.shields.io/npm/v/npm.svg)
